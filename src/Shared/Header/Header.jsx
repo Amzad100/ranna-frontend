@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaLock } from 'react-icons/fa';
 
 const Header = () => {
     return (
@@ -21,7 +22,8 @@ const Header = () => {
                             <Link className='text-dark mx-4 text-decoration-none' to="/blog">Blog</Link>
                         </Nav>
                         <div>
-                            <Link to="/login"><Button className='btn-info'>Login</Button></Link>
+                            <Link className='mx-4'>Profile</Link>
+                            <Link to="/login"><Button className='btn-primary'><FaLock className='me-2'/>Login</Button></Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
