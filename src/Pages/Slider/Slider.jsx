@@ -3,12 +3,12 @@ import { Carousel, Container } from 'react-bootstrap';
 
 const Slider = () => {
     return (
-        <Container>
+        <>
             <Carousel fade>
                 <Carousel.Item>
                     <img
                         style={{ height: '700px' }}
-                        className="d-block w-100 h-75vh"
+                        className="d-block w-100"
                         src="https://i.ibb.co/LtP73sN/flatlay-iron-skillet-with-meat-and-other-food.jpg"
                         alt="First slide"
                     />
@@ -20,7 +20,7 @@ const Slider = () => {
                 <Carousel.Item>
                     <img
                         style={{ height: '700px' }}
-                        className="d-block w-100 h-75vh"
+                        className="d-block w-100"
                         src="https://i.ibb.co/pLbMMpH/images.jpg"
                         alt="Second slide"
                     />
@@ -33,7 +33,7 @@ const Slider = () => {
                 <Carousel.Item>
                     <img
                         style={{ height: '700px' }}
-                        className="d-block w-100 h-75vh"
+                        className="d-block w-100"
                         src="https://i.ibb.co/cNtZz66/istockphoto-1316145932-170667a.jpg"
                         alt="Third slide"
                     />
@@ -46,7 +46,7 @@ const Slider = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </Container>
+        </>
     );
 };
 

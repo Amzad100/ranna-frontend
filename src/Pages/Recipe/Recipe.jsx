@@ -8,7 +8,7 @@ const Recipe = ({ recipe }) => {
         <div>
             <Col className='h-6'>
                 <Card>
-                    <Card.Img height={250} variant="top" src={recipe_img} />
+                    <Card.Img height={300} variant="top" src={recipe_img} />
                     <Card.Body>
                         <Card.Text>{recipe_title}</Card.Text>
                         <Card.Text className='text-muted'>{recipe_description}</Card.Text>
