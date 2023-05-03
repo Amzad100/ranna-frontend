@@ -8,7 +8,7 @@ const Header = () => {
         <Container>
             <Navbar expand="lg">
                 <Container fluid>
-                    <Link className='text-dark text-decoration-none' to=""><h1>Ranna</h1></Link>
+                    <Link className='text-dark text-decoration-none' to="/"><h1>Ranna</h1></Link>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -16,14 +16,12 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link className='text-dark mx-4 text-decoration-none' to="/home">Home</Link>
-                            <Link className='text-dark mx-4 text-decoration-none' to="/chef">Chef</Link>
-                            <Link className='text-dark mx-4 text-decoration-none' to="/recipes">Recipes</Link>
+                            <Link className='text-dark mx-4 text-decoration-none' to="/">Home</Link>
                             <Link className='text-dark mx-4 text-decoration-none' to="/blog">Blog</Link>
                         </Nav>
                         <div>
-                            <Link className='mx-4'>Profile</Link>
-                            <Link to="/login"><Button className='btn-primary'><FaLock className='me-2'/>Login</Button></Link>
+                            <img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" />
+                            <Link to="/login"><Button className='btn-primary'><FaLock className='me-2' />Login</Button></Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
