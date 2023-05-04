@@ -30,7 +30,7 @@ const Header = () => {
                         </Nav>
                         <div>
                             {
-                                user && <><small className='me-2'>{user?.displayName}</small><img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" /></>
+                                user && <><small className='me-2'></small><img className="rounded-circle me-2" width="40" height="40" src={user.photoURL} alt="profile" /></>
                             }
                             {
                                 user ?

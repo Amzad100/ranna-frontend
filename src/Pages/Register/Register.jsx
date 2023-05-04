@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../../Shared/Header/Header';
@@ -7,6 +7,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleRegister = event => {
         event.preventDefault();
@@ -18,10 +20,12 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
+                setError('')
                 const createdUser = result.user;
+                setSuccess('Register successfully')
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
     }
     return (
@@ -45,6 +49,12 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
+                <Form.Text className='text-success'>
+                    {success}
+                </Form.Text>
+                <Form.Text className='text-danger'>
+                    {error}
+                </Form.Text>
                 <Button type='submit'>Submit</Button>
                 <p>Do you have an account?<Link to="/login">Go to Login</Link></p>
             </Form>
