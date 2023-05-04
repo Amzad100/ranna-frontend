@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { FaClock, FaFolderOpen, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
@@ -7,8 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Recipe = ({ recipe }) => {
     const { _id, ingredients, chef_img, time, category_name, chef_name, recipe_description, recipe_title, recipe_img, cooking_method, rating } = recipe;
-    const handleFavorite = (time) => {
+    const [favorited, setFavorite] = useState(false)
+    const handleFavorite = () => {
         toast("Added Favorite!");
+        setFavorite(true);
     }
     return (
         <div>
@@ -53,7 +55,7 @@ const Recipe = ({ recipe }) => {
                             </div>
                         </div>
                     </Card.Body>
-                    <Button onClick={() => handleFavorite(time)}><ToastContainer></ToastContainer>Favorite</Button>
+                    <Button onClick={handleFavorite} disabled={favorited}><ToastContainer></ToastContainer>Favorite</Button>
                 </Card>
             </Col>
         </div>

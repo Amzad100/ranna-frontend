@@ -1,6 +1,6 @@
 import React from 'react';
 import './Items.css'
-import { FaClock, FaCookieBite } from 'react-icons/fa';
+import { FaMugHot, FaCookieBite,FaUtensils,FaWineGlass } from 'react-icons/fa';
 
 
 const Items = () => {
@@ -9,11 +9,11 @@ const Items = () => {
             <h2>Some Items</h2>
             <div className="item-container">
                 <div className="item">
-                    <FaClock className='mt-5 fs-1'></FaClock>
-                    <h2>Grill</h2>
+                    <FaMugHot className='mt-5 fs-1'></FaMugHot>
+                    <h2>Coffee</h2>
                 </div>
                 <div className="item">
-                    <FaClock className='mt-5 fs-1'></FaClock>
+                    <FaWineGlass className='mt-5 fs-1'></FaWineGlass>
                     <h2>Quick Food</h2>
                 </div>
                 <div className="item">
@@ -21,7 +21,7 @@ const Items = () => {
                     <h2>Cookies</h2>
                 </div>
                 <div className="item">
-                    <FaClock className='mt-5 fs-1'></FaClock>
+                    <FaUtensils className='mt-5 fs-1'></FaUtensils>
                     <h2>Breakfast</h2>
                 </div>
             </div>
