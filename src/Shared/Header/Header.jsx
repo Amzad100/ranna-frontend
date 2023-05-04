@@ -5,7 +5,13 @@ import { FaLock } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
     return (
         <Container>
             <Navbar expand="lg">
@@ -23,11 +29,11 @@ const Header = () => {
                         </Nav>
                         <div>
                             {
-                                user && <><small className='me-2'>{user.disPlayName}</small><img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" /></>
+                                user && <><small className='me-2'>{user?.displayName}</small><img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" /></>
                             }
                             {
                                 user ?
-                                    <Button className='btn-primary'><FaLock className='me-2' />Logout</Button> :
+                                    <Button onClick={handleLogOut} className='btn-primary'><FaLock className='me-2' />Logout</Button> :
                                     <Link to="/login"><Button className='btn-primary'><FaLock className='me-2' />Login</Button></Link>
                             }
                         </div>
