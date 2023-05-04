@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaLock } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
         <Container>
             <Navbar expand="lg">
@@ -20,8 +22,14 @@ const Header = () => {
                             <Link className='text-dark mx-4 text-decoration-none' to="/blog">Blog</Link>
                         </Nav>
                         <div>
-                            <img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" />
-                            <Link to="/login"><Button className='btn-primary'><FaLock className='me-2' />Login</Button></Link>
+                            {
+                                user && <><small className='me-2'>{user.disPlayName}</small><img className="rounded-circle me-2" width="40" height="40" src="https://i.ibb.co/RCYkvbq/2.jpg" alt="profile" /></>
+                            }
+                            {
+                                user ?
+                                    <Button className='btn-primary'><FaLock className='me-2' />Logout</Button> :
+                                    <Link to="/login"><Button className='btn-primary'><FaLock className='me-2' />Login</Button></Link>
+                            }
                         </div>
                     </Navbar.Collapse>
                 </Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { FaClock, FaFolderOpen, FaRegStar, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
 
 const Recipe = ({ recipe }) => {
     const { _id, chef_img, time, category_name, chef_name, recipe_description, recipe_title, recipe_img, cooking_method, rating } = recipe;
@@ -11,6 +12,16 @@ const Recipe = ({ recipe }) => {
                     <Card.Img height={300} variant="top" src={recipe_img} />
                     <Card.Body>
                         <Card.Text>{recipe_title}</Card.Text>
+                        <div>
+                            <Rating
+                                placeholderRating={rating}
+                                readonly
+                                emptySymbol={<FaRegStar></FaRegStar>}
+                                placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                                fullSymbol={<FaStar></FaStar>}
+                            >
+                            </Rating>
+                        </div>
                         <Card.Text className='text-muted'>{recipe_description}</Card.Text>
                         <div className='d-flex align-items-center'>
                             <img className="rounded-circle mb-2" width="40" height="40" src={chef_img} alt="profile" />
@@ -18,10 +29,10 @@ const Recipe = ({ recipe }) => {
                         </div>
                         <div className='row'>
                             <div className='col border p-2 text-center'>
-                                <small className="text-muted">{category_name}</small>
-                            </div> 
+                                <small className="text-muted"> <FaFolderOpen></FaFolderOpen> {category_name}</small>
+                            </div>
                             <div className='col border p-2 text-center'>
-                                <small className="text-muted">{time}</small>
+                                <small className="text-muted"> <FaClock></FaClock> {time}</small>
                             </div>
                         </div>
                     </Card.Body>

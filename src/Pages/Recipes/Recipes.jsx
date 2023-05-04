@@ -12,7 +12,7 @@ const Recipes = () => {
         <div>
             <Header></Header>
             <Container>
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} md={2} lg={3} className="g-4">
                     {
                         recipes.map(recipe => <Recipe
                             key={recipe._id}
