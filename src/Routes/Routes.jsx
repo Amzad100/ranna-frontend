@@ -9,11 +9,13 @@ import Blog from "../Pages/Blogs/Blog";
 import PrivateRoutes from "./PrivateRoutes";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import ErrorPage from "../Pages/About/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -23,24 +25,29 @@ const router = createBrowserRouter([
     },
     {
         path: '/chef/:id',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
+        loader: ({ params }) => fetch(`https://chef-recipes-server-beta.vercel.app/chefs/${params.id}`)
     },
     {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
+        errorElement: <ErrorPage></ErrorPage>,
     },
     {
         path: '/register',
-        element: <Register></Register>
+        element: <Register></Register>,
+        errorElement: <ErrorPage></ErrorPage>,
     },
     {
         path: '/blog',
-        element: <PrivateRoutes><Blog></Blog></PrivateRoutes>
+        element: <PrivateRoutes><Blog></Blog></PrivateRoutes>,
+        errorElement: <ErrorPage></ErrorPage>,
     },
     {
         path: '/about',
-        element: <PrivateRoutes><About></About></PrivateRoutes>
+        element: <PrivateRoutes><About></About></PrivateRoutes>,
+        errorElement: <ErrorPage></ErrorPage>,
     }
 ])
 

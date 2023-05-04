@@ -10,6 +10,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
+
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -17,6 +18,22 @@ const Register = () => {
         const photo = form.url.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        setError('');
+        setSuccess('');
+
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            setError('please add at least two uppercase.');
+            return
+        }
+        else if (!/(?=.*[!@#$*])/.test(password)) {
+            setError('please add a special character.');
+            return
+        }
+        else if (password.length < 6) {
+            setError('password must be 6 characters long');
+            return
+        }
 
         createUser(email, password)
             .then(result => {
@@ -43,7 +60,7 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required />
+                    <Form.Control type="email" name='email'  placeholder="Enter email" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Label>Password</Form.Label>
