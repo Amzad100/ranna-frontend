@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaRegHandPointRight } from 'react-icons/fa';
+import { FaThumbsUp } from 'react-icons/fa';
 
 
 const Chef = ({ chef }) => {
@@ -15,7 +15,7 @@ const Chef = ({ chef }) => {
                         <Card.Title>{chef_name}</Card.Title>
                         <Card.Text>Years Of Experience: {years_of_experience}</Card.Text>
                         <Card.Text>Number Of Recipes: {number_of_recipes}</Card.Text>
-                        <Card.Text>Likes: <FaRegHandPointRight></FaRegHandPointRight> {likes}</Card.Text>
+                        <Card.Text>Likes: <FaThumbsUp></FaThumbsUp> {likes}</Card.Text>
                         <Link to={`/chef/${id}`}><Button>View Recipes</Button></Link>
                     </Card.Body>
                 </Card>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaLock } from 'react-icons/fa';
+import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
@@ -26,6 +26,7 @@ const Header = () => {
                         >
                             <Link className='text-dark mx-4 text-decoration-none' to="/">Home</Link>
                             <Link className='text-dark mx-4 text-decoration-none' to="/blog">Blog</Link>
+                            <Link className='text-dark mx-4 text-decoration-none' to="/about">About</Link>
                         </Nav>
                         <div>
                             {
@@ -33,7 +34,7 @@ const Header = () => {
                             }
                             {
                                 user ?
-                                    <Button onClick={handleLogOut} className='btn-primary'><FaLock className='me-2' />Logout</Button> :
+                                    <Button onClick={handleLogOut} className='btn-primary'><FaLockOpen className='me-2' />Logout</Button> :
                                     <Link to="/login"><Button className='btn-primary'><FaLock className='me-2' />Login</Button></Link>
                             }
                         </div>
