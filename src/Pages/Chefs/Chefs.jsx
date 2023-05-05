@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Chef from '../Chef/Chef';
-import Header from '../../Shared/Header/Header';
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
@@ -25,7 +24,6 @@ const Chefs = () => {
                     </Chef>)
                 }
             </Row>
-
         </Container>
     );
 };

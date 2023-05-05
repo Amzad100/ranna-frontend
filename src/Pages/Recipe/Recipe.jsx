@@ -5,7 +5,7 @@ import Rating from 'react-rating';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe}) => {
     const { _id, ingredients, chef_img, time, category_name, chef_name, recipe_description, recipe_title, recipe_img, cooking_method, rating } = recipe;
     const [favorited, setFavorite] = useState(false)
     const handleFavorite = () => {
