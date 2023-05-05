@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Recipe from '../Recipe/Recipe';
 
 const Recipes = () => {

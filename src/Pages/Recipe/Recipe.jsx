@@ -55,8 +55,9 @@ const Recipe = ({ recipe }) => {
                             </div>
                         </div>
                     </Card.Body>
-                    <Button onClick={handleFavorite} disabled={favorited}><ToastContainer></ToastContainer>Favorite</Button>
                 </Card>
+                <Button onClick={handleFavorite} disabled={favorited}>Favorite</Button>
+                <ToastContainer></ToastContainer>
             </Col>
         </div>
     );

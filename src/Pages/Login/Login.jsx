@@ -4,15 +4,16 @@ import Footer from '../../Shared/Footer/Footer';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+
+const auth = getAuth(app);
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const emailRef = useRef();
-    const auth = getAuth(app);
     const navigate = useNavigate();
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -79,7 +80,14 @@ const Login = () => {
         if (!email) {
             alert('Please provied your email adderss to reset password')
         }
-
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                alert('please chack your email')
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+            })
     }
     return (
         <div>
