@@ -1,11 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [isHovering, setIsHovering] = useState(false);
+    const navLinkstyle = ({ isActive }) => {
+        return {
+            fontWeight: isActive ? 'bold' : 'normal',
+            color: isActive ? 'red' : ''
+        }
+    }
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    };
+
 
     const handleLogOut = () => {
         logOut()
@@ -24,13 +40,14 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link className='text-dark mx-4 text-decoration-none' to="/">Home</Link>
-                            <Link className='text-dark mx-4 text-decoration-none' to="/blog">Blog</Link>
-                            <Link className='text-dark mx-4 text-decoration-none' to="/about">About</Link>
+                            <NavLink style={navLinkstyle} className='text-dark mx-4 text-decoration-none' to="/">Home</NavLink>
+                            <NavLink style={navLinkstyle} className='text-dark mx-4 text-decoration-none' to="/blog">Blog</NavLink>
+                            <NavLink style={navLinkstyle} className='text-dark mx-4 text-decoration-none' to="/about">About</NavLink>
                         </Nav>
                         <div>
                             {
-                                user && <><small className='me-2'></small><img className="rounded-circle me-2" width="40" height="40" src={user.photoURL} alt="profile" /></>
+                                user && <><small className='me-2'>{isHovering && <small>{user.displayName}</small>}</small><img className="rounded-circle me-2" onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave} width="40" height="40" src={user.photoURL} alt="profile" /> </>
                             }
                             {
                                 user ?

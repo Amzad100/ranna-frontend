@@ -14,8 +14,8 @@ const Register = () => {
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const photo = form.url.value;
+        const displayName = form.displayName.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -52,11 +52,11 @@ const Register = () => {
             <Form onSubmit={handleRegister} className='mx-auto w-25 card p-4'>
                 <Form.Group className="mb-3" controlId="formGroupName">
                     <Form.Label>Your name</Form.Label>
-                    <Form.Control type="text" name='name' placeholder="Enter your name" required />
+                    <Form.Control type="text" name='displayName' placeholder="Enter your name" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPhotoURL">
                     <Form.Label>Your Photo URL</Form.Label>
-                    <Form.Control type="text" name='url' placeholder="Enter your photo URL" required />
+                    <Form.Control type="text" name='photoURL' placeholder="Enter your photo URL" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>

@@ -15,10 +15,10 @@ const Footer = () => {
                                 <Link className='text-decoration-none' to="/"><h1>Ranna</h1></Link>
                                 <p>I provide new recipes with a twist on daily basis. I also post blog posts about fun ideas to do in the kitchen.</p>
                                 <div>
-                                    <button className="btn btn-primary rounded mx-2" type="button" id="button-addon2"><FaFacebook></FaFacebook></button>
-                                    <button className="btn btn-primary rounded mx-2" type="button" id="button-addon2"><FaTwitter></FaTwitter></button>
-                                    <button className="btn btn-primary rounded mx-2" type="button" id="button-addon2"><FaLinkedin></FaLinkedin></button>
-                                    <button className="btn btn-primary rounded mx-2" type="button" id="button-addon2"><FaYoutube></FaYoutube></button>
+                                    <Link className="btn btn-primary rounded mx-2" to='https://www.facebook.com/'><FaFacebook></FaFacebook></Link>
+                                    <Link className="btn btn-primary rounded mx-2" to='https://www.twitter.com/'><FaTwitter></FaTwitter></Link>
+                                    <Link className="btn btn-primary rounded mx-2" to='https://www.linkedin.com/'><FaLinkedin></FaLinkedin></Link>
+                                    <Link className="btn btn-primary rounded mx-2" to='https://www.youtube.com/'><FaYoutube></FaYoutube></Link>
                                 </div>
                             </div>
                             <div className=" col-12 col-md-4 col-lg-2">

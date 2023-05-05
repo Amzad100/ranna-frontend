@@ -5,11 +5,11 @@ import Rating from 'react-rating';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Recipe = ({ recipe}) => {
+const Recipe = ({ recipe }) => {
     const { _id, ingredients, chef_img, time, category_name, chef_name, recipe_description, recipe_title, recipe_img, cooking_method, rating } = recipe;
     const [favorited, setFavorite] = useState(false)
     const handleFavorite = () => {
-        toast("Added Favorite!");
+        toast("The recipe is your favorite!");
         setFavorite(true);
     }
     return (
@@ -40,7 +40,7 @@ const Recipe = ({ recipe}) => {
                             </ol>
                         </div>
 
-                        <Card.Text className='text-muted'>{cooking_method}</Card.Text>
+                        <Card.Text className='text-muted'>Cooking Method: {cooking_method}</Card.Text>
                         <Card.Text className='text-muted'>{recipe_description}</Card.Text>
                         <div className='d-flex align-items-center'>
                             <img className="rounded-circle mb-2" width="40" height="40" src={chef_img} alt="profile" />
