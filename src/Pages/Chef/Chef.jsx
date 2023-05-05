@@ -25,3 +25,5 @@ const Chef = ({ chef }) => {
 };
 
 export default Chef;
+
+// Thank you

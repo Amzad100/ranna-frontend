@@ -13,3 +13,5 @@ const About = () => {
 };
 
 export default About;
+
+// Thank you

@@ -29,3 +29,5 @@ const Chefs = () => {
 };
 
 export default Chefs;
+
+// Thank you

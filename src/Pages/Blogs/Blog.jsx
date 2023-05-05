@@ -4,7 +4,6 @@ import Footer from '../../Shared/Footer/Footer';
 import { FaHandPointRight, FaCheckCircle } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 
-
 const Blog = () => {
     return (
         <div>
@@ -46,3 +45,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
+// Thank you

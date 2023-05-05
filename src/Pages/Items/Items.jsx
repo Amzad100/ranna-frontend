@@ -1,6 +1,6 @@
 import React from 'react';
 import './Items.css'
-import { FaMugHot, FaCookieBite,FaUtensils,FaWineGlass } from 'react-icons/fa';
+import { FaMugHot, FaCookieBite, FaUtensils, FaWineGlass } from 'react-icons/fa';
 
 
 const Items = () => {
@@ -30,3 +30,5 @@ const Items = () => {
 };
 
 export default Items;
+
+// Thank you

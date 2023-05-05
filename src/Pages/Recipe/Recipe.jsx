@@ -64,3 +64,5 @@ const Recipe = ({ recipe }) => {
 };
 
 export default Recipe;
+
+// Thank you

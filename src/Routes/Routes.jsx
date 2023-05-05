@@ -45,3 +45,5 @@ const router = createBrowserRouter([
 ])
 
 export default router;
+
+// Thank you

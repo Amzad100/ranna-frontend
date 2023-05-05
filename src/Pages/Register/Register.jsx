@@ -60,7 +60,7 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email'  placeholder="Enter email" required />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Label>Password</Form.Label>
@@ -81,3 +81,5 @@ const Register = () => {
 };
 
 export default Register;
+
+// Thank you

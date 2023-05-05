@@ -66,3 +66,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// Thank you
